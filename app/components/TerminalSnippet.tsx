@@ -69,7 +69,10 @@ export function TerminalSnippet() {
     return () => clearTimeout(timeout);
   }, [tick, phase]);
 
-  let charCount = 0;
+  const lineOffsets = lines.reduce<number[]>((acc, line, i) => {
+    acc.push(i === 0 ? 0 : acc[i - 1] + lines[i - 1].text.length);
+    return acc;
+  }, []);
 
   return (
     <div className="rounded-2xl bg-card border border-border p-5 font-mono text-sm glow min-w-[200px] shadow-sm">
@@ -80,8 +83,7 @@ export function TerminalSnippet() {
       </div>
       <div className="space-y-1.5 text-muted-foreground min-h-[120px]">
         {lines.map((line, idx) => {
-          const lineStart = charCount;
-          charCount += line.text.length;
+          const lineStart = lineOffsets[idx];
           const visibleLen = Math.max(0, Math.min(line.text.length, visibleChars - lineStart));
           const visibleText = line.text.slice(0, visibleLen);
           const isActiveLine = visibleChars >= lineStart && visibleChars < lineStart + line.text.length;

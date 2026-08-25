@@ -1,6 +1,21 @@
 import Image from "next/image";
 
-export function Experience({ data }: { data: any }) {
+type ExperienceItem = {
+  shortreview: string;
+  points: string[];
+};
+
+type ExperienceData = {
+  title: string;
+  company: string;
+  timeline: string;
+  logo?: string;
+  logoSrc?: string;
+  logoBg?: string;
+  experience: ExperienceItem[];
+};
+
+export function Experience({ data }: { data: ExperienceData }) {
   return (
     <div className="rounded-xl border border-border bg-card p-6 card-hover">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-3">
@@ -22,13 +37,13 @@ export function Experience({ data }: { data: any }) {
         </span>
       </div>
       <div className="space-y-4">
-        {data.experience.map((item: any, index: number) => (
+        {data.experience.map((item: ExperienceItem, index: number) => (
           <div key={index}>
             <p className="text-sm text-muted-foreground leading-relaxed mb-3">
               {item.shortreview}
             </p>
             <ul className="space-y-2">
-              {item.points.map((point: any, idx: number) => (
+              {item.points.map((point: string, idx: number) => (
                 <li key={idx} className="flex gap-3 text-sm">
                   <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary shrink-0" />
                   <span className="text-secondary-foreground leading-relaxed">{point}</span>
