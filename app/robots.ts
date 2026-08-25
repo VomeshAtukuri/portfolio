@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://vomesh.dev/sitemap.xml",
+    sitemap: "https://vomeshatukuri.vercel.app/sitemap.xml",
   };
 }

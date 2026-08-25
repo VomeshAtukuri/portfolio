@@ -35,14 +35,14 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Vomesh Atukuri" }],
   creator: "Vomesh Atukuri",
-  metadataBase: new URL("https://vomesh.dev"),
+  metadataBase: new URL("https://vomeshatukuri.vercel.app"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://vomesh.dev",
+    url: "https://vomeshatukuri.vercel.app",
     title: "Vomesh Atukuri | Software Engineer & AI Enthusiast",
     description:
       "Software Developer focused on building modern, scalable web applications and AI-powered products with React, Next.js, TypeScript, and LLMs.",
@@ -78,7 +78,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Vomesh Atukuri",
-    url: "https://vomesh.dev",
+    url: "https://vomeshatukuri.vercel.app",
     jobTitle: "Software Engineer",
     sameAs: [
       "https://github.com/vomeshatukuri",
