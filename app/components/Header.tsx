@@ -29,7 +29,7 @@ export default function Header() {
     <header className="fixed top-0 w-full z-50 backdrop-blur-xl bg-background/80 border-b border-border/50">
       <div className="max-w-5xl mx-auto flex items-center justify-between px-6 py-4">
         <Link href="/" className="text-lg font-bold tracking-tight gradient-text font-[family-name:var(--font-heading)]">
-          vomeshatukuri.vercel.app
+          vomeshatukuri
         </Link>
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
